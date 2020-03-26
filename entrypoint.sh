@@ -4,11 +4,11 @@ echo "Authenticating Openshift TOKEN.."
 oc login --token=$OC_TOKEN --server=$OC_SERVER
 
 echo "Installing Manifests.."
-oc apply -n $2 -f $1
+oc apply -n $OC_NAMESPACE -f $OC_SOURCE_PATH
 
 echo "Done.."
 
-status=$(oc status -n $2)
+status=$(oc status -n $OC_NAMESPACE)
 echo "::set-output name=status::$status"
 
 exit 0

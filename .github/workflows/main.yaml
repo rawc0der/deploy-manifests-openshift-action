@@ -19,8 +19,8 @@ jobs:
         # oc-namespace: 'rawdata'
         # oc-use-insecure: 'false'
       env:
-        OC_TOKEN: ${{ secrets.oc_token }}
-        OC_SERVER: ${{ secrets.oc_server }}
+        OC_TOKEN: ${{ secrets.OC_TOKEN }}
+        OC_SERVER: ${{ secrets.OC_SERVER }}
         OC_SOURCE_PATH: 'deploy/'
         OC_NAMESPACE: 'rawdata'  
         OC_USE_INSECURE: 'false'

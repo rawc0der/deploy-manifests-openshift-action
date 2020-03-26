@@ -1,29 +1,30 @@
 # action.yml
 name: 'Hello World'
 description: 'Greet someone and record the time'
-inputs:
-  oc-token:
-    required: true
-    description: 'OpenShift Token used for authenticating the client. Example [ZZZZZZZ_ZZZZZZZZZ-ZZZZZZZZZZZZ]'
+author: rawc0der <spinualin@gmail.com>
+# inputs:
+#   oc-token:
+#     required: true
+#     description: 'OpenShift Token used for authenticating the client. Example [ZZZZZZZ_ZZZZZZZZZ-ZZZZZZZZZZZZ]'
 
-  oc-server:
-    required: true
-    description: 'OpenShift Server to use for connection. Example [https://api.us-east-2.starter.openshift-online.com:6443]  '
+#   oc-server:
+#     required: true
+#     description: 'OpenShift Server to use for connection. Example [https://api.us-east-2.starter.openshift-online.com:6443]  '
 
-  # oc-source-path:
-  #   required: true
-  #   description: 'The OC_SOURCE_PATH env variable used for selecting which files or folders to deploy. Example [/deploy/] [/deploy/helm/charts] [/deploy/secrets.yaml] [kubernetes-application.yaml]'
-  #   default: deploy
+#   oc-source-path:
+#     required: true
+#     description: 'The OC_SOURCE_PATH env variable used for selecting which files or folders to deploy. Example [/deploy/] [/deploy/helm/charts] [/deploy/secrets.yaml] [kubernetes-application.yaml]'
+#     default: deploy
 
-  # oc-namespace:
-  #   required: true
-  #   description: 'The OC_SOURCE_PATH env variable used for selecting which files or folders to deploy. Example [/deploy/] [/deploy/helm/charts] [/deploy/secrets.yaml] [kubernetes-application.yaml]'
-  #   default: deploy
+#   oc-namespace:
+#     required: true
+#     description: 'The OC_SOURCE_PATH env variable used for selecting which files or folders to deploy. Example [/deploy/] [/deploy/helm/charts] [/deploy/secrets.yaml] [kubernetes-application.yaml]'
+#     default: deploy
 
-  # oc-use-insecure:
-  #   required: false
-  #   description: 'Use insecure connection'
-  #   default: false
+#   oc-use-insecure:
+#     required: false
+#     description: 'Use insecure connection'
+#     default: false
 
 outputs:
   status: # id of output
@@ -31,9 +32,9 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:  # CHange to ENV VARS
+  # args:  # CHange to ENV VARS
     # - ${{ inputs.oc-token }}
     # - ${{ inputs.oc-server }}
-    - ${{ inputs.oc-source-path }}
-    - ${{ inputs.oc-namespace }}
-    - ${{ inputs.oc-use-insecure }}
+    # - ${{ inputs.oc-source-path }}
+    # - ${{ inputs.oc-namespace }}
+    # - ${{ inputs.oc-use-insecure }}
