@@ -38,15 +38,23 @@ The status of the cluster after deployment.
 ### `oc-server` Available as an Secret in your Github accountserver
 
 ## Environment variables the action uses
-### `oc-token` {string} The TOKEN associated with your OpenShift Account. Example: 'XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX'
-### `oc-server`{string} Your OpenShift Cluster API Server Address. Example: 'https://api.us-east-2.starter.openshift-online.com:6443'
+
+### `oc-token` 
+
+**Required**  '{string} The TOKEN associated with your OpenShift Account. Example: XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX' 
+
+### `oc-server`
+
+**Required** '{string} Your OpenShift Cluster API Server Address. Example: https://api.us-east-2.starter.openshift-online.com:6443'
+
 
 ## Example usage
 ```
 uses: rawc0der/deploy-manifests-openshift-action@v0.0.1
+env:  
+  oc-token: 'XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX'
+  oc-server: 'https://api.us-east-2.starter.openshift-online.com:6443' 
 with:
-  <!-- oc-token: 'XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX'
-  oc-server: 'https://api.us-east-2.starter.openshift-online.com:6443' -->
   oc-source-path: 'deploy/'
   oc-namespace: 'rawdata'
   oc-use-insecure: 'false'
