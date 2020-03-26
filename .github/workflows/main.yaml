@@ -12,12 +12,18 @@ jobs:
     - name: Deploy to OpenShift action step
       id: deploy
       uses: rawc0der/deploy-manifests-openshift-action@v0.0.1
-      with:
-        oc-token: 'XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX'
-        oc-server: 'https://api.us-east-2.starter.openshift-online.com:6443'
-        oc-source-path: 'deploy/'
-        oc-namespace: 'rawdata'
-        oc-use-insecure: 'false'
+      # with:
+        # oc-token: 'XXXXXXXXX-ZZZZZZZZZ_XXXXXXXX'
+        # oc-server: 'https://api.us-east-2.starter.openshift-online.com:6443'
+        # oc-source-path: 'deploy/'
+        # oc-namespace: 'rawdata'
+        # oc-use-insecure: 'false'
+      env:
+        OC_TOKEN: ${{ secrets.oc_token }}
+        OC_SERVER: ${{ secrets.oc_server }}
+        OC_SOURCE_PATH: 'deploy/'
+        OC_NAMESPACE: 'rawdata'  
+        OC_USE_INSECURE: 'false'
     # View the output from the `deploy` step
     - name: Check the cluster status
       run: echo "${{ steps.deploy.outputs.status }}"

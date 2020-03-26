@@ -1,14 +1,14 @@
 #!/bin/sh -l
 
 echo "Authenticating Openshift TOKEN.."
-oc login --token=$1 --server=$2
+oc login --token=$OC_TOKEN --server=$OC_SERVER
 
 echo "Installing Manifests.."
-oc apply -n $4 -f $3
+oc apply -n $2 -f $1
 
 echo "Done.."
 
-status=$(oc status -n $4)
+status=$(oc status -n $2)
 echo "::set-output name=status::$status"
 
 exit 0
