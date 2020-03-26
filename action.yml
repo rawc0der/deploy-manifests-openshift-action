@@ -1,6 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Deploy Manifests Openshift Action'
+description: 'Use this GitHub Action to deploy kubernetes manifests files on OpenShift Clusters '
 author: rawc0der <spinualin@gmail.com>
 # inputs:
 #   oc-token:
